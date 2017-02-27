@@ -1,52 +1,39 @@
 .TodoItem {
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 2px solid #999;
+  border-bottom: 1px solid #999;
+  cursor: pointer;
   display: flex;
   height: 3em;
+  justify-content: space-between;
   user-select: none;
 }
 
-.TodoItem__checkbox {
-  display: none;
-  width: 1em;
+.TodoItem--done .TodoItem__text {
+  color: #999;
+  text-decoration: line-through;
 }
 
-.TodoItem__label {
+.TodoItem__text {
   display: inline-block;
   font-size: 18px;
-}
-
-.TodoItem__label::before {
-  content: '';
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  border: 2px solid #222;
-  margin-right: 1em;
-}
-
-.TodoItem--done .TodoItem__label::before {
-  content: '√';
+  padding-left: 2px;
 }
 
 .TodoItem__delete-button {
-  background-color: #e74c3c;
+  background-color: transparent;
   border: 0;
-  color: #fff;
+  color: #666;
   cursor: pointer;
   display: block;
   float: right;
   opacity: 0;
-  padding: .5em 1em;
-  font-size: 18px;
+  padding: 10px;
+  font-size: 25px;
   transition: all .1s ease-out;
 }
 
-.TodoItem__delete-button:focus,
-.TodoItem__delete-button:hover {
-  background-color: #c0392b;
-  outline: none;
+.TodoItem__delete-button:focus {
+  outline: 0;
 }
 
 .TodoItem:hover .TodoItem__delete-button,

@@ -1,13 +1,25 @@
 .App__header {
-  background: linear-gradient(to right, #222, #444);
+  background: linear-gradient(to bottom, #222, #444);
   color: #fff;
-  padding: 10px 0;
+  padding: 12px 0;
   text-align: center;
   text-transform: uppercase;
 }
 
+@media screen and (min-width: 700px) {
+  .App__header {
+    padding: 25vh 0 24px;
+  }
+}
+
 .App__heading {
   margin: 0;
+}
+
+@media screen and (min-width: 700px) {
+  .App__heading {
+    font-size: 72px;
+  }
 }
 
 .App__content {

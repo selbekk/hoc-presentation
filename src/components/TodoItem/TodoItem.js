@@ -18,21 +18,16 @@ function TodoItem(props) {
         'TodoItem',
         { 'TodoItem--done': done },
       )}
+      onClick={() => onToggleTodo(id)}
     >
-      <label className="TodoItem__label">
-        <input
-          className="TodoItem__checkbox"
-          type="checkbox"
-          checked={done}
-          onChange={() => onToggleTodo(id)}
-        />
-        <span>{text}</span>
-      </label>
+      <span className="TodoItem__text">
+        {text}
+      </span>
       <button
         className="TodoItem__delete-button"
         onClick={() => onRemoveTodo(id)}
       >
-        Slett
+        &times;
       </button>
     </li>
   );
