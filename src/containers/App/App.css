@@ -1,13 +1,13 @@
-.App {
-
-}
-
 .App__header {
-  background-color: #222;
+  background: linear-gradient(to right, #222, #444);
   color: #fff;
   padding: 10px 0;
   text-align: center;
   text-transform: uppercase;
+}
+
+.App__heading {
+  margin: 0;
 }
 
 .App__content {
