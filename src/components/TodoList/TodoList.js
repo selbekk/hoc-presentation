@@ -6,6 +6,8 @@ import AddTodoPanel from '../AddTodoPanel';
 
 import * as dispatchers from '../../dispatchers';
 
+import './TodoList.css';
+
 function TodoList(props) {
   const {
     addTodo,

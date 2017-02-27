@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import './AddTodoPanel.css';
+
 class AddTodoPanel extends Component {
   state = {
     text: '',
@@ -7,26 +9,22 @@ class AddTodoPanel extends Component {
 
   onChange = e => this.setState({ text: e.target.value })
 
-  onClick = () => {
+  onSubmit = e => {
+    e.preventDefault();
     this.props.onAddTodo(this.state.text);
     this.setState({ text: '' });
   }
 
   render() {
     return (
-      <div className="AddTodoPanel">
+      <form className="AddTodoPanel" onSubmit={this.onSubmit}>
         <input
           className="AddTodoPanel__input"
           onChange={this.onChange}
+          placeholder="Hva vil du gjøre?"
           value={this.state.text}
         />
-        <button
-          className="AddTodoPanel__button"
-          onClick={this.onClick}
-        >
-          +
-        </button>
-      </div>
+      </form>
     );
   }
 }

@@ -1,0 +1,17 @@
+.App {
+
+}
+
+.App__header {
+  background-color: #222;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.App__content {
+  margin: 10px auto;
+  max-width: 800px;
+  padding: 0 10px;
+}

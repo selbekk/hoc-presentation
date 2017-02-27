@@ -1,4 +1,7 @@
 import React, { PropTypes } from 'react';
+import classNames from 'classnames';
+
+import './TodoItem.css';
 
 function TodoItem(props) {
   const {
@@ -10,14 +13,27 @@ function TodoItem(props) {
   } = props;
 
   return (
-    <li className="TodoItem">
-      <input
-        type="checkbox"
-        checked={done}
-        onChange={() => onToggleTodo(id)}
-      />
-      {text}
-      <button onClick={() => onRemoveTodo(id)}>Slett</button>
+    <li
+      className={classNames(
+        'TodoItem',
+        { 'TodoItem--done': done },
+      )}
+    >
+      <label className="TodoItem__label">
+        <input
+          className="TodoItem__checkbox"
+          type="checkbox"
+          checked={done}
+          onChange={() => onToggleTodo(id)}
+        />
+        <span>{text}</span>
+      </label>
+      <button
+        className="TodoItem__delete-button"
+        onClick={() => onRemoveTodo(id)}
+      >
+        Slett
+      </button>
     </li>
   );
 }
