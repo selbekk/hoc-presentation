@@ -9,9 +9,18 @@ import './index.css';
 
 const store = configureStore();
 
-ReactDOM.render(
+const render = Component => ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Component />
   </Provider>,
   document.getElementById('root'),
 );
+
+render(App);
+
+if (module.hot) {
+  module.hot.accept('./containers/App', () => {
+    const NextApp = require('./containers/App').default;
+    render(NextApp);
+  })
+}
