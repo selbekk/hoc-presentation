@@ -1,5 +1,11 @@
 import uuid from 'uuid';
 
+export const SET_TODOS = 'SET_TODOS';
+export const setTodos = todos => ({
+  todos,
+  type: SET_TODOS,
+});
+
 export const ADD_TODO = 'ADD_TODO';
 export const addTodo = text => ({
   todo: {

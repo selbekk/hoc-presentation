@@ -1,0 +1,31 @@
+.Spinner {
+  width: 100px;
+}
+
+.Spinner__image {
+  animation: 2s spin linear infinite;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.Spinner__text {
+  display: block;
+  padding-top: 0.5em;
+  text-align: center;
+}
+
+@keyframes spin {
+  0% {
+    perspective: 0;
+  }
+  50% {
+    transform: rotateY(180deg) scale(0.9);
+  }
+  100% {
+    perspective: 100px;
+    transform: rotateY(360deg);
+  }
+}
