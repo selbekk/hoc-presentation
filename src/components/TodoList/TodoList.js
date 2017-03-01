@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import TodoItem from '../TodoItem';
 
+//import withSpinner from '../../hocs/withSpinner';
+
 import './TodoList.css';
 
 function TodoList(props) {

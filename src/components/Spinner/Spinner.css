@@ -1,5 +1,6 @@
 .Spinner {
   width: 100px;
+  margin: 10px auto;
 }
 
 .Spinner__image {

@@ -2,6 +2,12 @@ import * as actions from '../actions';
 
 export default function todosReducer(state = [], action) {
   switch (action.type) {
+    case actions.SET_TODOS: {
+      return [
+        ...state,
+        ...action.todos,
+      ];
+    }
     case actions.ADD_TODO: {
       return [
         ...state,

@@ -7,6 +7,17 @@ import TodoList from '../../components/TodoList';
 import * as dispatchers from '../../dispatchers';
 
 class TodoPage extends Component {
+  componentDidMount() {
+    const {
+      getTodos,
+      todos,
+    } = this.props;
+
+    if (!todos.length) {
+      getTodos();
+    }
+  }
+
   render() {
     const {
       addTodo,
