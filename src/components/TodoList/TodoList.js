@@ -1,7 +1,10 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+
 import TodoItem from '../TodoItem';
 
-//import withSpinner from '../../hocs/withSpinner';
+import * as dispatchers from '../../dispatchers';
+import withLoadedProperties from '../../hocs/withLoadedProperties';
 
 import './TodoList.css';
 
@@ -36,4 +39,10 @@ TodoList.propTypes = {
   toggleTodo: PropTypes.func.isRequired,
 };
 
-export default TodoList;
+const mapStateToProps = state => ({
+  todos: state.todos,
+});
+
+export default connect(mapStateToProps, dispatchers)(
+  withLoadedProperties({ todos: 'getTodos' })(TodoList)
+)
