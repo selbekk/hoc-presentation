@@ -5,6 +5,7 @@ import TodoItem from '../TodoItem';
 
 import * as dispatchers from '../../dispatchers';
 import withLoadedProperties from '../../hocs/withLoadedProperties';
+import withSpinner from '../../hocs/withSpinner';
 
 import './TodoList.css';
 
@@ -44,5 +45,7 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, dispatchers)(
-  withLoadedProperties({ todos: 'getTodos' })(TodoList)
+  withLoadedProperties({ todos: 'getTodos' })(
+    withSpinner(TodoList, 'todos')
+  )
 )

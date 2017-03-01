@@ -10,7 +10,6 @@ const withSpinner = (TargetComponent, propName) => {
     }
     render() {
       if (this.isEmpty()) {
-        console.log('spinner');
         return (
           <Spinner />
         );
