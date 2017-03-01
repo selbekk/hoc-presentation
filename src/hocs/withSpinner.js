@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Spinner from '../components/Spinner';
 
-export default function withSpinner(TargetComponent, propName) {
+const withSpinner = (TargetComponent, propName) => {
   return class extends Component {
     isEmpty() {
       const prop = this.props[propName];
@@ -21,3 +21,5 @@ export default function withSpinner(TargetComponent, propName) {
     }
   }
 }
+
+export default withSpinner;
