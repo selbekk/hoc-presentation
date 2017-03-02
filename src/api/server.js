@@ -1,6 +1,6 @@
 const delayResponse = response => new Promise(resolve => setTimeout(() => {
   resolve(response);
-}, 1000));
+}, 2000));
 
 export const getTodos = () => {
   return delayResponse([
