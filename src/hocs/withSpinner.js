@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import Spinner from '../components/Spinner';
 
 const withSpinner = propName => (TargetComponent) => {
@@ -9,6 +8,7 @@ const withSpinner = propName => (TargetComponent) => {
         || (prop instanceof Object && Object.keys(prop).length === 0)
         || (prop === undefined || prop === null);
     }
+
     render() {
       return this.isEmpty(this.props[propName])
         ? <Spinner />

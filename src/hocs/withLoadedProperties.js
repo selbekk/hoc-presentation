@@ -8,6 +8,7 @@ const withLoadedProperties = config => (TargetComponent) => {
         .map(propertyName => config[propertyName])
         .forEach(dispatcherName => this.props[dispatcherName]());
     }
+    
     render() {
       return <TargetComponent {...this.props} />;
     }
